@@ -12,4 +12,7 @@ export const colors = {
   blueRibbon: "#0043FFEB",
   sushi: "#77BD43",
   resolutionBlue: "#002674",
+  mintTulip: "#C4EEF1F2",
+  whiteg2: "#FFFFFFDB",
+  pixieGreen: "#B5DAB5",
 };

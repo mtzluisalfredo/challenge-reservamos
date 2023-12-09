@@ -1,14 +1,15 @@
 import images from '@/assets'
 import { colors } from '@/styles/colors'
-import { Box, Flex, Image, Radio, RadioGroup, Stack, Text } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import React from 'react'
+import { connect } from 'react-redux';
 import TripDetails from './TripDetails'
 import Presentation from './Presentation'
 
 function Hero() {
   return (
     <Box
-      bgImage={`linear-gradient(to bottom, #c4eef1f2 0%, #ffffffdb 50%, #b5dab5 100%), url(${images.bg2})`}
+      bgImage={`linear-gradient(to bottom, ${colors.mintTulip} 0 , ${colors.whiteg2} 50%,  ${colors.pixieGreen} 100%), url(${images.bg2})`}
       bgSize="cover"
       bgPosition="center"
       height={{ base: '100vh' }}
@@ -19,4 +20,12 @@ function Hero() {
   )
 }
 
-export default Hero
+const mapStateToProps = (state: any) => {
+  console.log("🚀 ~ file: Hero.tsx:24 ~ mapStateToProps ~ state:", state)
+
+  return {};
+};
+
+const actions = {};
+
+export default connect(mapStateToProps, actions)(Hero);
