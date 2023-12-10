@@ -18,7 +18,7 @@ function Presentation() {
             bgGradient='linear(to-l, sushi, resolutionBlue)'
             bgClip='text'
           >
-            Buscando grandes ofertas en billetes de autobús
+            Buscando grandes ofertas en boletos de autobús
           </Text>
           <Text
             fontSize={{ base: '28px' }}

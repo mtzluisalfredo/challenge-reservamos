@@ -1,7 +1,7 @@
+import React from 'react'
 import images from '@/assets'
 import { colors } from '@/styles/colors'
 import { Box } from '@chakra-ui/react'
-import React from 'react'
 import { connect } from 'react-redux';
 import TripDetails from './TripDetails'
 import Presentation from './Presentation'

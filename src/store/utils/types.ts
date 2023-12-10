@@ -1,4 +1,3 @@
-// Definición de tipos
 export type ActionType = string | number;
 export type SubTypes = string[];
 
