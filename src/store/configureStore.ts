@@ -1,11 +1,11 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { multiClientMiddleware } from "redux-axios-middleware";
-import locations from "./reducers/locations";
+import places from "./reducers/places";
 import { clients } from "@/api/clients";
 
 const rootReducer = combineReducers({
-  locations: locations,
+  places: places,
 });
 
 const middleware = [thunk, multiClientMiddleware(clients)];

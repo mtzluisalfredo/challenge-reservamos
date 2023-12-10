@@ -4,12 +4,9 @@ import images from '@/assets'
 
 function Presentation() {
   return (
-    <Flex paddingTop={{ base: '160px' }} maxW={{ base: '1296px' }} marginX={{ base: 'auto' }}>
-      <Flex height={{ base: '480px' }} flex={1} alignItems={{ base: 'center' }}>
-        <Flex
-          flex={1}
-          flexDirection={{ base: 'column' }}
-        >
+    <Flex paddingTop={{ base: '120px' }} maxW={{ base: '1296px' }} marginX={{ base: 'auto' }}>
+      <Flex height={{ base: '400px' }} flex={1} alignItems={{ base: 'center' }}>
+        <Flex flex={1} flexDirection={{ base: 'column' }}>
           <Text
             fontWeight='extrabold'
             fontSize={{ base: '50px' }}

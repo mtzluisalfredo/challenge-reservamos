@@ -1,4 +1,4 @@
-import { types } from "../actions/locations";
+import { types } from "../actions/places";
 
 const initialState = {
   loading: false,

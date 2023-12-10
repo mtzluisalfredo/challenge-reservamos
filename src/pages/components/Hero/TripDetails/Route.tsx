@@ -1,37 +1,51 @@
 import { SearchIcon } from '@chakra-ui/icons'
 import { Button, Input, InputGroup, InputRightElement, Text, Stack } from '@chakra-ui/react'
 import React from 'react'
-import PinIcon from '../../Icons'
+import * as placesActios from '@/store/actions/places';
+import LocationSelect from '../LocationSelect'
+import { connect } from 'react-redux'
+import _ from 'lodash';
 
-function Route() {
+
+function Route(props: any) {
+  const { getPlaces } = props;
+  const loadOptions = async (inputValue: any, callback: (arg0: any) => void) => {
+    try {
+      const labels: any = {
+        city: 'Ciudad',
+        airport: 'Aeropuerto',
+        terminal: 'Terminal',
+      }
+      
+      const response = await getPlaces({ q: inputValue });
+      const options = response.payload.data.map((item: { display: any; }) => ({ ...item, value: item, label: item.display }));
+
+      const groupedData = _.groupBy(options, 'result_type');
+
+      const result = _.map(groupedData, (options, label) => ({
+        label: labels[label],
+        options: options.slice(0, 3),
+      }));
+
+      callback(result);
+    } catch (error) {
+      console.error('Error al cargar opciones:', error);
+    }
+  };
+
   return (
     <Stack flexDirection={{ base: 'row' }} spacing={4}>
       <InputGroup>
-        <Input type='tel' placeholder='Phone number' />
-        <InputRightElement pointerEvents='none'>
-          <PinIcon color='gray.300' />
-        </InputRightElement>
+        <LocationSelect promiseOptions={loadOptions} />
       </InputGroup>
       <InputGroup>
-        <Input placeholder='Enter amount' />
-        <InputRightElement pointerEvents='none'>
-          <PinIcon color='gray.300' />
-        </InputRightElement>
-      </InputGroup>
-
-      <InputGroup>
-        <Input
-          placeholder="Select Date and Time"
-          size="md"
-          type="date"
-        />
+        <LocationSelect promiseOptions={loadOptions} />
       </InputGroup>
       <InputGroup>
-        <Input
-          placeholder="Select Date and Time"
-          size="md"
-          type="date"
-        />
+        <Input placeholder="Select Date and Time" size="md" type="date" />
+      </InputGroup>
+      <InputGroup>
+        <Input placeholder="Select Date and Time" size="md" type="date" />
       </InputGroup>
       <Button
         leftIcon={<SearchIcon />}
@@ -46,4 +60,13 @@ function Route() {
   )
 }
 
-export default Route
+
+const mapStateToProps = (state: any) => {
+  return {};
+};
+
+const actions = {
+  ...placesActios,
+};
+
+export default connect(mapStateToProps, actions)(Route);
