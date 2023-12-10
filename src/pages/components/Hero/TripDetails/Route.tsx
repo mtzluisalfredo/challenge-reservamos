@@ -1,33 +1,19 @@
-import { SearchIcon } from '@chakra-ui/icons'
-import { Button, Input, InputGroup, InputRightElement, Text, Stack } from '@chakra-ui/react'
 import React from 'react'
+import { SearchIcon } from '@chakra-ui/icons'
+import { Button, Input, InputGroup, Text, Stack } from '@chakra-ui/react'
 import * as placesActios from '@/store/actions/places';
 import LocationSelect from '../LocationSelect'
 import { connect } from 'react-redux'
-import _ from 'lodash';
+import { filterLocations } from '@/utils';
 
 
 function Route(props: any) {
   const { getPlaces } = props;
+
   const loadOptions = async (inputValue: any, callback: (arg0: any) => void) => {
     try {
-      const labels: any = {
-        city: 'Ciudad',
-        airport: 'Aeropuerto',
-        terminal: 'Terminal',
-      }
-      
       const response = await getPlaces({ q: inputValue });
-      const options = response.payload.data.map((item: { display: any; }) => ({ ...item, value: item, label: item.display }));
-
-      const groupedData = _.groupBy(options, 'result_type');
-
-      const result = _.map(groupedData, (options, label) => ({
-        label: labels[label],
-        options: options.slice(0, 3),
-      }));
-
-      callback(result);
+      callback(filterLocations(response));
     } catch (error) {
       console.error('Error al cargar opciones:', error);
     }
@@ -61,7 +47,7 @@ function Route(props: any) {
 }
 
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = () => {
   return {};
 };
 
