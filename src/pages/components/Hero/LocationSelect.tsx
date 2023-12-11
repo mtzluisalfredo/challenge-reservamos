@@ -52,6 +52,7 @@ const DefaultSelect = ({ promiseOptions, ...props }: { promiseOptions: any }) =>
         Menu: Menu,
       }}
       loadOptions={promiseOptions}
+      menuPlacement='auto'
     />
   );
 };

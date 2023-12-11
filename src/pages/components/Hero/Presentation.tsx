@@ -5,7 +5,9 @@ import images from '@/assets'
 function Presentation() {
   return (
     <Flex paddingTop={{ base: '120px' }} maxW={{ base: '1296px' }} marginX={{ base: 'auto' }}>
-      <Flex height={{ base: '400px' }} flex={1} alignItems={{ base: 'center' }}>
+      <Flex
+        flexDirection={{ base: 'column', xl: 'row' }}
+        height={{ base: '400px' }} flex={1} alignItems={{ base: 'center' }}>
         <Flex flex={1} flexDirection={{ base: 'column' }}>
           <Text
             fontWeight='extrabold'
@@ -26,7 +28,7 @@ function Presentation() {
             viaje en autobús sin complicaciones, ya que tenemos el mayor inventario de autobuses...
           </Text>
         </Flex>
-        <Flex flex={1}>
+        <Flex flex={1} display={{ base: 'none', xl: 'flex' }}>
           <Text>
             <Image alt='tomate_logo' src={images.bus1} />
           </Text>

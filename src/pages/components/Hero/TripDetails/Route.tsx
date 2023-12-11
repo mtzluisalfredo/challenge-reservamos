@@ -1,9 +1,7 @@
 import React from 'react'
 import { SearchIcon } from '@chakra-ui/icons'
 import { Button, Input, InputGroup, Text, Stack } from '@chakra-ui/react'
-import * as placesActios from '@/store/actions/places';
 import LocationSelect from '../LocationSelect'
-import { connect } from 'react-redux'
 import { filterLocations } from '@/utils';
 
 
@@ -46,13 +44,4 @@ function Route(props: any) {
   )
 }
 
-
-const mapStateToProps = () => {
-  return {};
-};
-
-const actions = {
-  ...placesActios,
-};
-
-export default connect(mapStateToProps, actions)(Route);
+export default Route;
