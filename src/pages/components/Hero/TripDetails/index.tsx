@@ -1,11 +1,18 @@
 import { Flex, Radio, RadioGroup, Stack, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import TripType from './TripType'
 import Route from './Route'
-import { ITripDetails } from '@/types/hero'
+import { CityData, ITripDetails } from '@/types/hero'
 
 function TripDetails(props: ITripDetails) {
-  const { getPlaces } = props;
+  const { getPlaces, getWeather, onSearch } = props;
+
+  const [valuesTrip, setValuesTrip] = useState({
+    from: {},
+    to: {},
+    type: '1',
+  });
+
 
   return (
     <Flex
@@ -21,8 +28,17 @@ function TripDetails(props: ITripDetails) {
         Reservar boletos de autobús
       </Text>
 
-      <TripType />
-      <Route getPlaces={getPlaces}  />
+      <TripType
+        value={valuesTrip.type}
+        onChange={(type) => setValuesTrip({ ...valuesTrip, type })}
+      />
+      <Route
+        setValuesTrip={setValuesTrip}
+        valuesTrip={valuesTrip}
+        onSearch={onSearch}
+        getPlaces={getPlaces}
+        getWeather={getWeather}
+      />
     </Flex>
   )
 }

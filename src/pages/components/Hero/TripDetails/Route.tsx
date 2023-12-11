@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SearchIcon } from '@chakra-ui/icons'
 import { Button, Input, InputGroup, Text, Stack } from '@chakra-ui/react'
 import LocationSelect from '../LocationSelect'
 import { filterLocations } from '@/utils';
+import { CityData, IRoute } from '@/types/hero';
 
 
-function Route(props: any) {
-  const { getPlaces } = props;
+function Route(props: IRoute) {
+  const { getPlaces, setValuesTrip, valuesTrip } = props;
+
 
   const loadOptions = async (inputValue: any, callback: (arg0: any) => void) => {
     try {
@@ -17,13 +19,16 @@ function Route(props: any) {
     }
   };
 
+  const handleFrom = (from: CityData) => setValuesTrip({ ...valuesTrip, from });
+  const handleTo = (to: CityData) => setValuesTrip({ ...valuesTrip, to });
+
   return (
     <Stack flexDirection={{ base: 'row' }} spacing={4}>
       <InputGroup>
-        <LocationSelect promiseOptions={loadOptions} />
+        <LocationSelect onSelect={handleFrom} promiseOptions={loadOptions} />
       </InputGroup>
       <InputGroup>
-        <LocationSelect promiseOptions={loadOptions} />
+        <LocationSelect onSelect={handleTo} promiseOptions={loadOptions} />
       </InputGroup>
       <InputGroup>
         <Input placeholder="Select Date and Time" size="md" type="date" />

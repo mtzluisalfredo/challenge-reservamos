@@ -1,13 +1,13 @@
-import { types } from "../actions/places";
+import { types } from "../actions/weather";
 
 const initialState = {
   loading: false,
 };
-const { GET_LOCATIONS_REQUEST } = types;
+const {GET_WEATHER_REQUEST } = types;
 
 const rLocations = (state = initialState, action: { type?: any; payload?: any; }) => {
   switch (action.type) {
-    case GET_LOCATIONS_REQUEST:
+    case GET_WEATHER_REQUEST:
       return {
         ...state,
       };

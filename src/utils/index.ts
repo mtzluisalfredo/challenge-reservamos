@@ -1,3 +1,4 @@
+import { CityData } from "@/types/hero";
 import _ from "lodash";
 
 const labelsTypesLocations: any = {
@@ -6,12 +7,12 @@ const labelsTypesLocations: any = {
   terminal: "Terminal",
 };
 
-export const filterLocations = (response: {
-  payload: { data: { display: any }[] };
+export const filterLocations: any = (response: {
+  payload: { data?: CityData[] | undefined };
 }) => {
-  const options = response.payload.data.map((item: { display: any }) => ({
+  const options = response?.payload?.data?.map((item: CityData) => ({
     ...item,
-    value: item,
+    value: item.id,
     label: item.display,
   }));
 

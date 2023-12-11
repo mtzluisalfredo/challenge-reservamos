@@ -6,9 +6,9 @@ const reservamos = axios.create({
 });
 
 const openweathermap = axios.create({
-  baseURL: "https://api.openweathermap.org/data/2.5",
+  baseURL: 'https://api.openweathermap.org/data/2.5',
   params: {
-    appid: "0eebd1fcf852d29ca0340c5c451d4c9a",
+    appid: "a5a47c18197737e8eeca634cd6acb581",
   },
 });
 

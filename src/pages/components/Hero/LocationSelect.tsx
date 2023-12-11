@@ -4,7 +4,9 @@ import { components } from 'react-select';
 import { useTheme } from '@chakra-ui/react';
 import PinIcon from '../Icons';
 
-const DefaultSelect = ({ promiseOptions, ...props }: { promiseOptions: any }) => {
+interface IDefaultSelect { promiseOptions: any; onSelect?: (p?: any) => void }
+
+const DefaultSelect = ({ promiseOptions, onSelect, ...props }: IDefaultSelect) => {
   const theme = useTheme();
 
   const customStyles = {
@@ -42,7 +44,6 @@ const DefaultSelect = ({ promiseOptions, ...props }: { promiseOptions: any }) =>
     );
   };
 
-
   return (
     <AsyncSelect
       styles={customStyles}
@@ -53,6 +54,11 @@ const DefaultSelect = ({ promiseOptions, ...props }: { promiseOptions: any }) =>
       }}
       loadOptions={promiseOptions}
       menuPlacement='auto'
+      onChange={(choice) => {
+        if (onSelect) {
+          onSelect(choice)
+        }
+      }}
     />
   );
 };

@@ -1,6 +1,6 @@
 import { asyncAction, createTypes } from "../utils/types";
 
-export const types = createTypes("app/", asyncAction("GET_LOCATIONS"));
+export const types = createTypes("places/", asyncAction("GET_LOCATIONS"));
 
 export const getPlaces = (payload: any) => (dispatch: any) =>
   dispatch({
@@ -14,7 +14,9 @@ export const getPlaces = (payload: any) => (dispatch: any) =>
       request: {
         method: "GET",
         url: "/places",
-        params: payload,
+        params: {
+          ...payload,
+        },
       },
     },
   });
