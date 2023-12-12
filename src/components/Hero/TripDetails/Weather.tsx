@@ -5,9 +5,9 @@ import dayjs from 'dayjs';
 function Weather({ hourlyWeather, location }: any) {
   return (
     <Box w="100%">
-      <Table variant="simple" size="sm">
+      <Table variant="simple" size={{ base: 'xs', md: 'sm' }}>
         <Thead>
-          <Tr>
+          <Tr fontSize={{ base: '10px', md: '16px' }}>
             <Th>Hora</Th>
             <Th>Clima</Th>
             <Th>Temperatura (&deg;C)</Th>
@@ -20,7 +20,7 @@ function Weather({ hourlyWeather, location }: any) {
               const backgroundColor = index % 2 === 0 ? '#f2f2f2' : 'white';
 
               return (
-                <Tr key={weather.dt} bg={backgroundColor}>
+                <Tr key={weather.dt} bg={backgroundColor} fontSize={{ base: '10px', md: '16px' }}>
                   <Td>
                     <Text>{index === 0 ? 'AHORA' : hour}</Text>
                   </Td>

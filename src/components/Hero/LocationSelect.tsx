@@ -10,6 +10,10 @@ const DefaultSelect = ({ promiseOptions, onSelect, ...props }: IDefaultSelect) =
   const theme = useTheme();
 
   const customStyles = {
+    menu: (provided: any, state: any) => ({
+      ...provided,
+      zIndex: 1000, // Ajusta el valor según sea necesario para superponerse a otros elementos
+    }),
     control: (provided: any) => ({
       ...provided,
       backgroundColor: theme.colors.white,
@@ -21,6 +25,10 @@ const DefaultSelect = ({ promiseOptions, onSelect, ...props }: IDefaultSelect) =
       width: '100%',
     }),
     indicatorSeparator: () => ({ display: 'none' }),
+    indicatorsContainer: (provided: any, state: any) => ({
+      ...provided,
+      padding: '0px 10px',
+    }),
   };
 
   const DropdownIndicator = (props: any) => {
@@ -52,6 +60,7 @@ const DefaultSelect = ({ promiseOptions, onSelect, ...props }: IDefaultSelect) =
         DropdownIndicator: DropdownIndicator,
         Menu: Menu,
       }}
+      menuIsOpen={true}
       loadOptions={promiseOptions}
       menuPlacement='auto'
       onChange={(choice) => {

@@ -51,13 +51,13 @@ function Route(props: IRoute) {
   return (
     <Flex flexDirection={{ base: 'column' }}>
       <Stack flexDirection={{ base: 'column', lg: 'row' }} spacing={4}>
-        <InputGroup>
+        <InputGroup zIndex={1000}>
           <LocationSelect
             onSelect={(from) => handleLocation(from, 'from')}
             promiseOptions={loadOptions}
           />
         </InputGroup>
-        <InputGroup>
+        <InputGroup zIndex={100}>
           <LocationSelect
             onSelect={(from) => handleLocation(from, 'to')}
             promiseOptions={loadOptions}
@@ -91,7 +91,7 @@ function Route(props: IRoute) {
           <Text>Buscar</Text>
         </Button>
       </Stack>
-      {/* <WrapperWeather weathers={weathers} valuesTrip={valuesTrip} /> */}
+      <WrapperWeather weathers={weathers} valuesTrip={valuesTrip} />
     </Flex>
   )
 }

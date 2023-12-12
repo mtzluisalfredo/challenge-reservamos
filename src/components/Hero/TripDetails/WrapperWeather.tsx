@@ -12,7 +12,7 @@ function WrapperWeather({ weathers, valuesTrip }: any) {
             Clima
           </Text>
         </Flex>}
-      <Stack spacing={16} flexDirection={{ base: 'row' }}>
+      <Stack spacing={16} flexDirection={{ base: 'column', md: 'row' }}>
         <Flex flex={1}>
           {!!weathers.from?.hourlyWeather.length &&
             <Flex flexDirection={{ base: 'column' }} flex={1}>

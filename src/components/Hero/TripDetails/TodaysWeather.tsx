@@ -4,8 +4,8 @@ import React from 'react'
 
 function TodaysWeather({ city, weather }: any) {
   return (
-    <Flex>
-      <Flex marginBottom={{ base: '24px' }} flexDirection={{ base: 'column' }}>
+    <Flex flexDirection={{base: 'column', md: 'row'}} maxW={{base: '200px', md: '100%'}}>
+      <Flex flex={1} marginBottom={{ base: '24px' }} flexDirection={{ base: 'column' }}>
         <Box>
           <Text fontWeight={{ base: 'bold' }}>
             {city.display} ({city.country})
@@ -30,7 +30,9 @@ function TodaysWeather({ city, weather }: any) {
       </Flex>
       <Flex
         alignItems={{ base: 'flex-end' }}
-        flex={1} flexDirection={{ base: 'column' }} justifyContent={{ base: 'flex-end' }}>
+        flex={1} 
+        flexDirection={{ base: 'column' }} 
+        justifyContent={{ base: 'flex-end' }}>
 
         <Image
           src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
