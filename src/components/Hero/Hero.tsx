@@ -9,13 +9,10 @@ import Presentation from './Presentation'
 import { connect } from 'react-redux'
 import { IHero } from '@/types/hero';
 
-
 function Hero(props: IHero) {
   const { getPlaces, getWeather } = props;
 
-  const onSearch = async (payload: any) => {
-    console.log('onSearch', payload)
-  };
+  const onSearch = async (payload: any) => {};
 
   return (
     <Box
@@ -27,7 +24,8 @@ function Hero(props: IHero) {
           url(${images.bg2})`}
       bgSize="cover"
       bgPosition="center"
-      height={{ base: '100vh' }}
+      minHeight={{ base: '100vh' }}
+      paddingBottom={{base: '100px'}}
     >
       <Presentation />
       <TripDetails

@@ -8,11 +8,10 @@ const reservamos = axios.create({
 const openweathermap = axios.create({
   baseURL: 'https://api.openweathermap.org/data/2.5',
   params: {
-    appid: "a5a47c18197737e8eeca634cd6acb581",
+    appid: process.env.NEXT_PUBLIC_API_KEY_WEATHER,
   },
 });
 
-// Create a configuration for each API client
 export const clients: any = {
   reservamos: {
     client: reservamos,

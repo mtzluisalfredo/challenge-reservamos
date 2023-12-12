@@ -1,4 +1,4 @@
-import { asyncAction, createTypes } from "../utils/types";
+import { asyncAction, createTypes } from "../../types/store";
 
 export const types = createTypes("weather/", asyncAction("GET_WEATHER"));
 
@@ -14,9 +14,11 @@ export const getWeather =
         client: "openweathermap",
         request: {
           method: "GET",
-          url: "/forecast",
+          url: "/onecall",
           params: {
             ...payload,
+            exclude: "minutely",
+            units: "metric",
           },
         },
       },

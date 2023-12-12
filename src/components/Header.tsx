@@ -8,7 +8,7 @@ function Header() {
     <Box
       flex={1}
       width={{ base: '100%' }}
-      position={{ base: 'fixed' }}
+      position={{ base: 'absolute' }}
       height={{ base: '80px' }}
       display={{ base: 'flex' }}
       maxW={{ base: '1296px' }}

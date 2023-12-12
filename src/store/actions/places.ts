@@ -1,4 +1,4 @@
-import { asyncAction, createTypes } from "../utils/types";
+import { asyncAction, createTypes } from "../../types/store";
 
 export const types = createTypes("places/", asyncAction("GET_LOCATIONS"));
 

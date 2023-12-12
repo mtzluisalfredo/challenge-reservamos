@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 function Layout({ children }: { children: ReactNode }) {
   return (
     <Box minH={{ base: '100vh' }}>
-      <Flex justifyContent={{ base: 'center' }}>
+        <Flex justifyContent={{ base: 'center' }}>
         <Header />
       </Flex>
       {children}

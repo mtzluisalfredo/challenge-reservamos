@@ -1,5 +1,6 @@
-import { CityData } from "@/types/hero";
 import _ from "lodash";
+import { CityData } from "@/types/hero";
+import dayjs from "dayjs";
 
 const labelsTypesLocations: any = {
   city: "Ciudad",
@@ -24,4 +25,15 @@ export const filterLocations: any = (response: {
   }));
 
   return result;
+};
+
+export const getHourlyWeather = (
+  hourlyData: any[],
+) => {
+  const endOfDay = dayjs().endOf("day").valueOf();
+  const eodTimeStamp = Math.floor(endOfDay / 1000);
+
+  const todaysData = hourlyData.filter((data) => data.dt < eodTimeStamp);
+
+  return todaysData;
 };

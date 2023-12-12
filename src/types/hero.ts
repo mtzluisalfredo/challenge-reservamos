@@ -16,14 +16,20 @@ export interface IHero extends IGetPlaces, IGetWeather {}
 
 export interface ITripDetails extends IGetPlaces, IGetWeather, IOnSearch {}
 
-interface IvaluesTrip {
-  from: {};
-  to: {};
+export interface IvaluesTrip {
+  from: {
+    display: string;
+  };
+  to: {
+    display: string;
+  };
   type: string;
+  startDate: string;
+  endDate: string;
 }
 
 export interface IRoute extends IGetPlaces, IGetWeather, IOnSearch {
-  setValuesTrip: React.Dispatch<React.SetStateAction<IvaluesTrip>>;
+  setValuesTrip: any;
   valuesTrip: IvaluesTrip;
 }
 
@@ -44,4 +50,8 @@ export interface CityData {
   sort_criteria: number;
   state: string;
   value: number;
+}
+
+export interface IGenericInput {
+  target: { value: any };
 }
