@@ -44,4 +44,7 @@ yarn dev
 
 Esto pondrá en marcha un servidor de desarrollo y le proporcionará una URL local para acceder a la aplicación y realizar pruebas.
 ![screencapture-localhost-3000-2023-12-12-02_29_16](https://github.com/mtzluisalfredo/challenge-reservamos/assets/29564260/d27e8e7a-5fcb-4ff2-9416-02f663fa2116)
+![screencapture-localhost-3000-2023-12-12-02_45_08](https://github.com/mtzluisalfredo/challenge-reservamos/assets/29564260/5b182e51-7ac5-4b5c-857b-04e0d6b4cb8f)
+![screencapture-localhost-3000-2023-12-12-02_44_54](https://github.com/mtzluisalfredo/challenge-reservamos/assets/29564260/ec058517-3b7e-430a-9d1a-2aa5c1c65185)
+
 
