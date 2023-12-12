@@ -37,6 +37,9 @@ Una vez que las dependencias se hayan instalado correctamente, puede ejecutar la
 ```bash
 # Iniciar la aplicación
 npm run dev
+
+# or
+yarn dev
 `````
 
 Esto pondrá en marcha un servidor de desarrollo y le proporcionará una URL local para acceder a la aplicación y realizar pruebas.
