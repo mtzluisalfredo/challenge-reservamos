@@ -1,40 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Challenge Reservamos
 
-## Getting Started
 
-First, run the development server:
+## Descripción del Proyecto
+
+El proyecto **Challenge Reservamos** ha sido desarrollado con el propósito de ser evaluado por el equipo de Reservamos. Se ha implementado utilizando Next.js, aprovechando el framework de componentes Chakra UI para facilitar y agilizar el desarrollo.
+
+## Características Principales
+
+- **Next.js:** Este proyecto se basa en Next.js, un marco de desarrollo de React que permite construir aplicaciones web modernas y eficientes.
+
+- **Chakra UI:** Se ha utilizado Chakra UI como el framework de componentes, proporcionando una colección de componentes reutilizables y estilos predefinidos para acelerar el desarrollo y mantener la coherencia visual en la aplicación.
+
+## Instalación
+
+Asegúrese de tener Node.js y npm instalados en su máquina antes de seguir estos pasos.
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/mtzluisalfredo/challenge-reservamos
+
+# Navegar al directorio del proyecto
+cd challenge-reservamos
+
+# Instalar las dependencias
+npm install
+# or
+yarn
+
+``````
+
+Este conjunto de comandos permite clonar el repositorio del proyecto en su máquina local y luego instalar todas las dependencias necesarias para ejecutar la aplicación.
+
+## Ejecución
+Una vez que las dependencias se hayan instalado correctamente, puede ejecutar la aplicación con el siguiente comando:
+
+```bash
+# Iniciar la aplicación
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+`````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esto pondrá en marcha un servidor de desarrollo y le proporcionará una URL local para acceder a la aplicación y realizar pruebas.
+![screencapture-localhost-3000-2023-12-12-02_29_16](https://github.com/mtzluisalfredo/challenge-reservamos/assets/29564260/d27e8e7a-5fcb-4ff2-9416-02f663fa2116)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
