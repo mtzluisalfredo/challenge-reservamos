@@ -1,13 +1,12 @@
 import React from 'react'
 import { SearchIcon } from '@chakra-ui/icons'
-import { Button, Input, InputGroup, Text, Stack, Flex, Box } from '@chakra-ui/react'
+import { Button, Input, InputGroup, Text, Stack, Flex } from '@chakra-ui/react'
 import LocationSelect from '../LocationSelect'
 import { filterLocations, getHourlyWeather } from '@/utils';
 import { CityData, IGenericInput, IRoute } from '@/types/hero';
-import Weather from './Weather';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
-import TodaysWeather from './TodaysWeather';
+import WrapperWeather from './WrapperWeather';
 
 dayjs.extend(timezone)
 dayjs.tz.setDefault("America/Mexico_City");
@@ -51,7 +50,7 @@ function Route(props: IRoute) {
 
   return (
     <Flex flexDirection={{ base: 'column' }}>
-      <Stack flexDirection={{ base: 'row' }} spacing={4}>
+      <Stack flexDirection={{ base: 'column', lg: 'row' }} spacing={4}>
         <InputGroup>
           <LocationSelect
             onSelect={(from) => handleLocation(from, 'from')}
@@ -87,35 +86,12 @@ function Route(props: IRoute) {
           colorScheme='green'
           variant='solid'
           width={{ base: '100%' }}
-          maxW={{ base: '180px' }}
+          maxW={{ base: '100%', lg: '180px' }}
         >
           <Text>Buscar</Text>
         </Button>
       </Stack>
-      {(!!weathers.from?.hourlyWeather.length || !!weathers.to?.hourlyWeather.length) &&
-        <Flex marginY={{ base: '24px' }}>
-          <Text fontSize={{ base: '24px' }} fontWeight={{ base: 'bold' }}>
-            Clima
-          </Text>
-        </Flex>}
-      <Stack spacing={16} flexDirection={{ base: 'row' }}>
-        <Flex flex={1}>
-          {!!weathers.from?.hourlyWeather.length &&
-            <Flex flexDirection={{ base: 'column' }} flex={1}>
-              <TodaysWeather city={valuesTrip.from} weather={weathers.from.weeklyWeather} />
-              <Weather location={valuesTrip.from?.display} hourlyWeather={weathers.from?.hourlyWeather} />
-            </Flex>
-          }
-        </Flex>
-        <Flex flex={1}>
-          {!!weathers.to?.hourlyWeather.length &&
-            <Flex flexDirection={{ base: 'column' }} flex={1}>
-              <TodaysWeather city={valuesTrip.to} weather={weathers.to.weeklyWeather} />
-              <Weather location={valuesTrip.to?.display} hourlyWeather={weathers.to?.hourlyWeather} />
-            </Flex>
-          }
-        </Flex>
-      </Stack>
+      {/* <WrapperWeather weathers={weathers} valuesTrip={valuesTrip} /> */}
     </Flex>
   )
 }

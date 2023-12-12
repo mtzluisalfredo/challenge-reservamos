@@ -14,24 +14,19 @@ const tripDetailsSchema = Yup.object().shape({
   endDate: Yup.string().required('Seleccione una fecha de regreso'),
 });
 
-
 function TripDetails(props: ITripDetails) {
   const { getPlaces, getWeather, onSearch } = props;
 
   const formik = useFormik({
     initialValues: {
-      from: {
-        display: '',
-      },
-      to: {
-        display: '',
-      },
+      from: { display: '' },
+      to: { display: '' },
       type: '1',
       startDate: '',
       endDate: '',
     },
     validationSchema: tripDetailsSchema,
-    onSubmit: () => {},
+    onSubmit: () => { },
   });
 
   const handleValuesTrip = (values: IvaluesTrip) => {
@@ -40,15 +35,16 @@ function TripDetails(props: ITripDetails) {
 
   return (
     <Flex
+      bg='white'
       flexDirection={{ base: 'column' }}
       borderRadius={{ base: '10px' }}
       minH={{ base: '100px' }}
       padding={{ base: '30px' }}
-      maxW={{ base: '1296px' }}
-      marginX={{ base: 'auto' }}
-      bg='white'
+      maxW={{ base: '100%', xl: '1296px' }}
+      marginX={{ base: '20px', md: '40px', xl: 'auto' }}
+      paddingX={{ base: '20px', md: '40px', xl: '40px' }}
     >
-      <Text fontSize={{ base: '24px' }}>
+      <Text fontSize={{ base: '20px', md: '24px' }} lineHeight={{base: 'normal'}} fontWeight={{base: 'bold'}}>
         Reservar boletos de autobús
       </Text>
 

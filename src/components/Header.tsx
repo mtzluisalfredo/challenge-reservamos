@@ -14,6 +14,7 @@ function Header() {
       maxW={{ base: '1296px' }}
       margin={{ base: '24px' }}
       borderRadius={{ base: '8px' }}
+      padding={{ base: '16px', xl: '0px' }}
     >
       <Flex>
         <Image w={{ base: '200px' }} alt='reservamos_logo' src={images.reservamos_logo} />

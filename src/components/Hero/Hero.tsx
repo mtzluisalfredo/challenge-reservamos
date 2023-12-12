@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import images from '@/assets';
 import * as placesActios from '@/store/actions/places';
 import * as weatherActions from '@/store/actions/weather';
@@ -12,7 +12,7 @@ import { IHero } from '@/types/hero';
 function Hero(props: IHero) {
   const { getPlaces, getWeather } = props;
 
-  const onSearch = async (payload: any) => {};
+  const onSearch = async () => { };
 
   return (
     <Box
@@ -25,7 +25,7 @@ function Hero(props: IHero) {
       bgSize="cover"
       bgPosition="center"
       minHeight={{ base: '100vh' }}
-      paddingBottom={{base: '100px'}}
+      paddingBottom={{ base: '100px' }}
     >
       <Presentation />
       <TripDetails
